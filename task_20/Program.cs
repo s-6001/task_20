@@ -9,14 +9,14 @@ namespace task_20
         {
             while (true)
             {
-                MyDelegate myDelegate = null;
-                myDelegate += CircleLength;
+                MyDelegate myDelegate = null;   //создаем делегат
+                myDelegate += CircleLength; //добавляем методы
                 myDelegate += CircleArea;
                 myDelegate += CircleVolume;
                 Console.Write("Введите радиус: r=");
                 try
                 {
-                    myDelegate?.Invoke(Convert.ToDouble(Console.ReadLine()));
+                    myDelegate?.Invoke(Convert.ToDouble(Console.ReadLine()));   //пытаемся считать радиус
                 }
                 catch
                 {
@@ -25,17 +25,17 @@ namespace task_20
                 Console.WriteLine();
             }
         }
-        static double CircleLength(double r)
+        static double CircleLength(double r)    //расчет длины окружности
         {
             Console.WriteLine("Длина окружности радиусом {1}: {0}", 2 * Math.PI * r, r);
             return 2 * Math.PI * r;
         }
-        static double CircleArea(double r)
+        static double CircleArea(double r)  //расчет площади круга
         {
             Console.WriteLine("Площадь круга радиусом {1}: {0}", Math.PI * r * r, r);
             return Math.PI * r * r;
         }
-        static double CircleVolume(double r)
+        static double CircleVolume(double r)    //расчет объема шара
         {
             Console.WriteLine("Объем шара радиусом {1}: {0}", (4 / 3) * Math.PI * r * r * r, r);
             return (4 / 3) * Math.PI * r * r * r;
